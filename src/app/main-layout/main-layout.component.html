@@ -1,0 +1,21 @@
+<div class="layout-container">
+    <div class="sidebar">
+      <div class="logo">BOCA</div>
+      
+      <nav class="nav-menu">
+        <a routerLink="/dashboard" routerLinkActive="active">Competition</a>
+        <a routerLink="/users" routerLinkActive="active">Users</a>
+        <a routerLink="/problems" routerLinkActive="active">Results</a>
+        <a routerLink="/answers" routerLinkActive="active">Parnets</a>
+        <a routerLink="/settings" routerLinkActive="active">Settings</a>
+        
+        <div class="divider"></div>
+        
+        <a (click)="logout()" class="logout">Logout</a>
+      </nav>
+    </div>
+    
+    <div class="content">
+      <router-outlet></router-outlet>
+    </div>
+  </div>

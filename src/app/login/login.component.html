@@ -1,0 +1,67 @@
+<div class="login-container">
+  <div class="login-card">
+    <h1>BOCA Login</h1>
+    <p class="subtitle">Quick & Simple way to see your progress in the competition</p>
+    
+    <!-- Credenciales de prueba -->
+    <div class="demo-credentials">
+      <p><strong>Usuario de prueba:</strong></p>
+      <!--<p>Email: <code>admin@boca.com</code></p>-->
+      <!--<p>Contraseña: <code>admin123</code></p>-->
+    </div>
+    
+    <div class="divider"></div>
+    
+    <!-- Formulario reactivo -->
+    <form [formGroup]="loginForm" (ngSubmit)="onSubmit()" class="login-form">
+      <!-- Campo Email -->
+      <div class="form-group">
+        <label for="email">EMAIL</label>
+        <input 
+          type="email" 
+          id="email"
+          formControlName="email"
+          placeholder="admin@boca.com"
+          [class.invalid]="loginForm.get('email')?.invalid && loginForm.get('email')?.touched"
+          required>
+        
+        <div *ngIf="loginForm.get('email')?.touched && loginForm.get('email')?.invalid" class="error-message">
+          <span *ngIf="loginForm.get('email')?.hasError('required')">Email es requerido</span>
+          <span *ngIf="loginForm.get('email')?.hasError('email')">Ingrese un email válido</span>
+        </div>
+      </div>
+      
+      <!-- Campo Contraseña -->
+      <div class="form-group">
+        <label for="password">CONTRASEÑA</label>
+        <input 
+          type="password" 
+          id="password"
+          formControlName="password"
+          placeholder="admin123"
+          [class.invalid]="loginForm.get('password')?.invalid && loginForm.get('password')?.touched"
+          required
+          minlength="6">
+        
+        <div *ngIf="loginForm.get('password')?.touched && loginForm.get('password')?.invalid" class="error-message">
+          <span *ngIf="loginForm.get('password')?.hasError('required')">Contraseña requerida</span>
+          <span *ngIf="loginForm.get('password')?.hasError('minlength')">Mínimo 6 caracteres</span>
+        </div>
+      </div>
+      
+      <!-- Botón de Submit -->
+      <button 
+        type="submit" 
+        class="login-button"
+        [disabled]="loginForm.invalid">
+        INGRESAR
+      </button>
+    </form>
+    
+    <div class="divider"></div>
+    
+    <div class="footer">
+      <p>© 2023 BOCA - Todos los derechos reservados</p>
+    </div>
+  </div>
+</div>
