@@ -1,6 +1,6 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { ProblemsComponent } from './problems.component';
+import { CommonModule } from '@angular/common'; 
 
 describe('ProblemsComponent', () => {
   let component: ProblemsComponent;

@@ -6,8 +6,8 @@ import { CommonModule } from '@angular/common';
   imports: [CommonModule],
   template: `
     <div class="page-container">
-      <h1>Gestión de Problemas</h1>
-      <p>Contenido de problemas aparecerá en esta área</p>
+      <h1>Resultado de la competencia</h1>
+      <p>Contenido de la resultado y clasificación de los equipos</p>
     </div>
   `,
   styles: [`

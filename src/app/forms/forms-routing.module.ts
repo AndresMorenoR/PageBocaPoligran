@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { ProblemsComponent } from '../problems/problems.component';
 
 export const FORMS_ROUTES: Routes = [
   { 
@@ -21,7 +22,25 @@ export const FORMS_ROUTES: Routes = [
   { 
     path: 'submissions/:id', 
     loadComponent: () => import('./form-submissions/form-submissions.component').then(m => m.FormSubmissionsComponent) 
+  },
+  { 
+    path: 'team-registration', 
+    loadComponent: () => import('./team-registration/team-registration.component').then(m =>m.TeamRegistrationComponent)
+  },
+  { 
+    path: 'tests-registration', 
+    loadComponent: () => import ('./test-registration/test-registration.component').then(m =>m.TestRegistrationComponent)
+  },
+  { 
+    path: '', 
+    redirectTo: 'team-registration', 
+    pathMatch: 'full' 
+  },
+  {
+    path: 'problems',
+    loadComponent() => import ('./problems/problems.Component').them(m =>m.ProblemsComponent)  
   }
+
 ];
 
 @NgModule({

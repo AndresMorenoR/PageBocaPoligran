@@ -1,0 +1,43 @@
+<form [formGroup]="registrationForm" (ngSubmit)="onSubmit()" class="registration-form">
+    <h2>Registro de Equipo</h2>
+    
+    <!-- Mensajes de estado -->
+    <div *ngIf="successMessage" class="alert success">{{ successMessage }}</div>
+    <div *ngIf="errorMessage" class="alert error">{{ errorMessage }}</div>
+  
+    <!-- Campos del formulario -->
+    <div class="form-group">
+      <label>Nombre del Equipo *</label>
+      <input formControlName="teamName" type="text" placeholder="Ej: Los Innovadores">
+      <span class="error-text">{{ getErrorMessage('teamName') }}</span>
+    </div>
+  
+    <div class="form-group">
+      <label>Institución *</label>
+      <input formControlName="institution" type="text" placeholder="Ej: Universidad Nacional">
+      <span class="error-text">{{ getErrorMessage('institution') }}</span>
+    </div>
+  
+    <div class="form-group">
+      <label>Programa Académico *</label>
+      <input formControlName="program" type="text" placeholder="Ej: Ingeniería de Sistemas">
+      <span class="error-text">{{ getErrorMessage('program') }}</span>
+    </div>
+  
+    <!-- Integrantes (FormArray) -->
+    <div formArrayName="members" class="members-container">
+      <h3>Integrantes *</h3>
+      
+      <div *ngFor="let member of members.controls; let i = index" class="member-row">
+        <input [formControlName]="i" placeholder="Nombre completo del integrante">
+        <button type="button" (click)="removeMember(i)" class="remove-btn">×</button>
+        <span class="error-text">{{ getErrorMessage('members', i) }}</span>
+      </div>
+  
+      <button type="button" (click)="addMember()" class="add-btn">+ Agregar Integrante</button>
+    </div>
+  
+    <button type="submit" class="submit-btn" [disabled]="registrationForm.invalid">
+      Registrar Equipo
+    </button>
+  </form>

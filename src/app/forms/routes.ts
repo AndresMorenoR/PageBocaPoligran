@@ -22,5 +22,18 @@ export const FORMS_ROUTES: Routes = [
       path: 'submissions', 
       loadComponent: () => import('./form-submissions/form-submissions.component').then(m => m.FormSubmissionsComponent) 
     },
+    { 
+      path: 'team-registration', 
+      loadComponent: () => import('./team-registration/team-registration.component').then(m =>m.TeamRegistrationComponent)
+    },
+    { 
+      path: 'tests-registration', 
+      loadComponent: () => import ('./test-registration/test-registration.component').then(m =>m.TestRegistrationComponent)
+    },
+    { 
+      path: '', 
+      redirectTo: 'team-registration', 
+      pathMatch: 'full' 
+    }
   ];
 
