@@ -5,14 +5,14 @@
   
   .sidebar {
     width: 250px;
-    background: #2c3e50;
-    color: white;
+    background: linear-gradient(135deg, #FFD1DC 0%, #E0BBE4 50%, #A2D9FF 100%);
+    color: #333;
     padding: 20px;
   }
   
   .logo {
-    font-size: 24px;
-    font-weight: bold;
+    font-size: 44px;
+    font-weight: Tahoma;
     margin-bottom: 30px;
     text-align: center;
   }
@@ -20,7 +20,7 @@
   .nav-menu {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 20px;
   }
   
   .nav-menu a {
@@ -37,7 +37,7 @@
   
   .nav-menu a.active {
     background-color: #2980b9;
-    font-weight: bold;
+    font-weight: tahoma;
   }
   
   .divider {
@@ -47,7 +47,7 @@
   }
   
   .logout {
-    color: #e74c3c !important;
+    color: #000080 !important;
     cursor: pointer;
   }
   

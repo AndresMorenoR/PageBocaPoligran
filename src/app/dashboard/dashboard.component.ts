@@ -23,12 +23,18 @@ import { Router } from '@angular/router'; // Importa Router
   styles: [`
     .dashboard-container {
       padding: 20px;
+      max-width: 1200px;
+      margin: 0 auto;
     }
     nav ul {
       display: flex;
       gap: 20px;
       list-style: none;
       padding: 0;
+    }
+    nav a {
+      text-decoration: none;
+      color: inherit; /* Hereda el color del texto padre */
     }
   `]
 })
